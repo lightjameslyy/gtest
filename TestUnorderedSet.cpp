@@ -23,3 +23,17 @@ TEST_F(UnorderedSetTest, traverse) {
     std::cout << std::endl;
     ASSERT_EQ(5, _mUnorderedSet.size());
 }
+
+TEST_F(UnorderedSetTest, eraseNotExistedElement) { 
+    for (int i = 0; i < 5; ++i) {
+        _mUnorderedSet.insert(i);
+    }
+     
+    _mUnorderedSet.erase(5);
+
+    for (int el : _mUnorderedSet)
+        std::cout << el << " ";
+    std::cout << std::endl;
+    ASSERT_EQ(5, _mUnorderedSet.size());
+}
+
